@@ -18,12 +18,17 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     // return view('Welcome');
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    // cache()->put('hello','world');
+    // dd(cache()->get('hello'));
+    // Cache::put('hello','world-Pappu');
+    // dd(cache()->get('hello'));
+    return view('Welcome');
+    // return Inertia::render('Welcome', [
+    //     'canLogin' => Route::has('login'),
+    //     'canRegister' => Route::has('register'),
+    //     'laravelVersion' => Application::VERSION,
+    //     'phpVersion' => PHP_VERSION,
+    // ]);
 });
 
 Route::get('/dashboard', function () {
@@ -41,7 +46,8 @@ Route::get('/test', function () {
 });
 
 Route::get('/test-one', function () {
-    return "test";    
+    // Sum::test();
+    Sum::test_one();
 });
 
 require __DIR__.'/auth.php';
